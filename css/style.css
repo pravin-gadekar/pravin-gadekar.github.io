@@ -1,0 +1,288 @@
+/* ————————————————————————————————
+   Pravin Gadekar — pravin-gadekar.github.io
+   Refined editorial light theme
+   ———————————————————————————————— */
+
+:root {
+  --paper: #faf8f4;
+  --paper-deep: #f3f0e9;
+  --ink: #1c1a17;
+  --ink-soft: #55524c;
+  --ink-faint: #8a867e;
+  --rule: #ddd8cd;
+  --accent: #0f5257;        /* deep petrol */
+  --accent-bright: #147d84;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "IBM Plex Sans", "Helvetica Neue", sans-serif;
+  --mono: "IBM Plex Mono", Menlo, monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, #eef3f0 0%, transparent 60%),
+    var(--paper);
+}
+
+.container {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.mono {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+}
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--accent-bright); }
+
+strong { font-weight: 600; }
+
+/* ——— Hero ——— */
+
+.hero {
+  padding: 5.5rem 0 4.5rem;
+  border-bottom: 1px solid var(--rule);
+  animation: rise 0.7s ease-out both;
+}
+
+.hero-kicker {
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.75rem, 8vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+
+.hero-role {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.25rem, 3.2vw, 1.75rem);
+  color: var(--ink-soft);
+  margin-top: 0.75rem;
+}
+
+.hero-role em { font-style: italic; color: var(--accent); }
+
+.hero-lede {
+  max-width: 38rem;
+  margin-top: 1.75rem;
+  color: var(--ink-soft);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.7rem 1.25rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: var(--ink);
+  text-decoration: none;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.btn:hover { background: var(--paper-deep); color: var(--ink); }
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--paper);
+}
+
+.btn-primary:hover { background: var(--accent-bright); border-color: var(--accent-bright); color: var(--paper); }
+
+.btn-note { font-size: 0.6875rem; opacity: 0.75; text-transform: uppercase; }
+
+/* ——— Sections ——— */
+
+section { padding: 4rem 0; border-bottom: 1px solid var(--rule); }
+
+.section-title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.875rem;
+  margin-bottom: 2.25rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.section-index { color: var(--accent); }
+
+/* ——— Stats ——— */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column-reverse; /* value above label, dt/dd stay valid order */
+  justify-content: flex-end;
+  padding: 1.5rem 1.5rem 1.4rem;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.stat dd {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  line-height: 1.1;
+  color: var(--accent);
+}
+
+.stat-unit { font-size: 0.55em; font-weight: 500; margin-left: 0.1em; }
+
+.stat dt {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  margin-top: 0.45rem;
+}
+
+/* ——— Expertise ——— */
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 3rem;
+}
+
+.area h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.area h3::before {
+  content: "▸ ";
+  color: var(--accent);
+}
+
+.area p { color: var(--ink-soft); font-size: 0.9375rem; }
+
+/* ——— Experience ——— */
+
+.timeline { list-style: none; }
+
+.role {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+}
+
+.role + .role { border-top: 1px solid var(--rule); }
+
+.role-dates { color: var(--ink-faint); padding-top: 0.35rem; }
+
+.role-body h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.role-title {
+  display: block;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 0.9375rem;
+  color: var(--ink-soft);
+  margin-top: 0.15rem;
+}
+
+.role-body ul {
+  margin-top: 0.85rem;
+  padding-left: 1.1rem;
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+}
+
+.role-body li { margin-bottom: 0.45rem; }
+.role-body li::marker { color: var(--accent); }
+
+/* ——— Certifications ——— */
+
+.cert-list { list-style: none; }
+
+.cert-list li {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1.5rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px dashed var(--rule);
+  font-size: 0.9375rem;
+  color: var(--ink-soft);
+}
+
+.cert-list li:last-child { border-bottom: none; }
+
+.cert-issuer { color: var(--accent); text-transform: uppercase; padding-top: 0.15rem; }
+
+/* ——— Footer ——— */
+
+footer { padding: 4rem 0 3rem; }
+
+.footer-cta {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links { color: var(--ink-soft); }
+
+.footer-fine { color: var(--ink-faint); margin-top: 2.5rem; }
+
+/* ——— Motion ——— */
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ——— Responsive ——— */
+
+@media (max-width: 44rem) {
+  .hero { padding: 3.5rem 0 3rem; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .expertise-grid { grid-template-columns: 1fr; }
+  .role { grid-template-columns: 1fr; gap: 0.35rem; padding: 1.4rem 0; }
+  .cert-list li { grid-template-columns: 1fr; gap: 0.15rem; }
+}
