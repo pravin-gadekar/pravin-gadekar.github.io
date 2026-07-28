@@ -234,6 +234,24 @@ section { padding: 4rem 0; border-bottom: 1px solid var(--rule); }
 .role-body li { margin-bottom: 0.45rem; }
 .role-body li::marker { color: var(--accent); }
 
+/* ——— Open Source ——— */
+
+.project h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.project h3 a { text-decoration: none; }
+.project h3 a:hover { text-decoration: underline; }
+
+.project p {
+  max-width: 44rem;
+  margin-top: 0.85rem;
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+}
+
 /* ——— Certifications ——— */
 
 .cert-list { list-style: none; }
