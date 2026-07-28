@@ -8,7 +8,7 @@
   --paper-deep: #f3f0e9;
   --ink: #1c1a17;
   --ink-soft: #55524c;
-  --ink-faint: #8a867e;
+  --ink-faint: #6e6a62;
   --rule: #ddd8cd;
   --accent: #0f5257;        /* deep petrol */
   --accent-bright: #147d84;
@@ -86,12 +86,15 @@ strong { font-weight: 600; }
   color: var(--ink-soft);
 }
 
-.hero-actions {
+.hero-actions,
+.footer-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 2.5rem;
 }
+
+.footer-actions { margin-top: 0; margin-bottom: 1.5rem; }
 
 .btn {
   display: inline-flex;
@@ -185,7 +188,7 @@ section { padding: 4rem 0; border-bottom: 1px solid var(--rule); }
 }
 
 .area h3::before {
-  content: "▸ ";
+  content: "▸ " / "";
   color: var(--accent);
 }
 
